@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -95,7 +96,17 @@ DATABASES = {
     }
 }
 
-
+JAZZMIN_SETTINGS = {
+    "skin": "black",
+    "title": "Panel de Administración",
+    "site_title": "Administracion",
+    "site_header": "Buscador",
+    "welcome_sign": "Bienvenido a la administracion",
+    "show_sidebar": True,
+    "show_breadcrumbs": True,
+    "navigation_expanded": True,
+    "language": "es",
+}
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -118,7 +129,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 

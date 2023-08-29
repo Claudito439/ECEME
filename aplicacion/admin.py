@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Pais, Fuerza, Regimiento
 
+admin.site.site_header = "ECEME"
 @admin.register(Pais)
 class PaisAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'abreviacion')

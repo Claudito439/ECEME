@@ -12,7 +12,7 @@ from .serializer import *
 import requests
 from django.http import JsonResponse
 
-COLORS = ["bg-red-600", "bg-yellow-500", "bg-green-500", "bg-blue-600", "bg-indigo-600", "bg-purple-600", "bg-pink-500", "bg-orange-500", "bg-teal-400", "bg-cyan-400"]
+#COLORS = ["bg-red-600", "bg-yellow-500", "bg-green-500", "bg-blue-600", "bg-indigo-600", "bg-purple-600", "bg-pink-500", "bg-orange-500", "bg-teal-400", "bg-cyan-400"]
 @api_view(['GET', 'POST'])
 def MenuListView(request):
     if request.method=='GET':
@@ -24,7 +24,6 @@ def MenuListView(request):
             j={}
             j["name"]=i['nombre']
             j["initials"]=i["abreviacion"]
-            j["bgColor"]=COLORS[random.randint(0,9)]
             fuerzas = Fuerza.objects.filter(pais=i["id"])
             f = FuerzaSerializer(fuerzas, many=True)
             fuer=[]
@@ -41,7 +40,6 @@ def MenuListView(request):
                 fuer.append(js)
             j["fuerzas"]=fuer
             json.append(j)
-            print(j["bgColor"])
         return Response(json,status=status.HTTP_200_OK)
 
 
